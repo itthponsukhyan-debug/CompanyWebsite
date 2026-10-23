@@ -1,0 +1,602 @@
+
+/* ========================================
+   1. GLOBAL - ตั้งค่าพื้นฐาน
+======================================== */
+:root {
+    --primary: ##243650;
+    --primary-dark: #66758b;
+    --navy: #243650;
+    --text: #243650;
+    --muted: #66758b;
+    --light-bg: #f3f7fc;
+    --border: #e2eaf4;
+    --white: #ffffff;
+    --radius: 30px;
+    --shadow: 0 12px 35px rgba(16, 37, 68, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.8;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+h1, h2, h3, p {
+    overflow-wrap: anywhere;
+}
+
+/* ========================================
+   2. HERO - ส่วนเปิดเว็บไซต์
+======================================== */
+.hero {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: normal;
+    gap: 48px;
+    min-height: 530px;
+    padding: 75px 8%;
+    overflow: hidden;
+    background: radial-gradient( circle at 5% 10%, #e2eaf4 0, transparent 38% ), linear-gradient(120deg, #ffffff 35%, #eff6ff 100%);
+}
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 350px;
+        height: 350px;
+        left: -180px;
+        bottom: -200px;
+        border-radius: 50%;
+        background: #d9e8ff;
+        filter: blur(4px);
+    }
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 570px;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+
+.hero h1 {
+    margin: 0 0 22px;
+    color: var(--navy);
+    font-size: clamp(34px, 4vw, 54px);
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -1.2px;
+}
+
+.hero p {
+    max-width: 480px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.btn-main,
+.btn-outline {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 46px;
+    padding: 11px 25px;
+    border: 1px solid var(--primary);
+    border-radius: 50px;
+    font: inherit;
+    font-weight: 700;
+    text-align: center;
+}
+
+.btn-main {
+    color: var(--white);
+    background: var(--primary);
+    box-shadow: 0 7px 18px #155eef2b;
+}
+
+    .btn-main:hover {
+        color: var(--white);
+        background: var(--primary-dark);
+        box-shadow: 0 10px 24px #155eef40;
+        transform: translateY(-2px);
+    }
+
+.btn-outline {
+    color: var(--primary);
+    background: transparent;
+}
+
+    .btn-outline:hover {
+        color: var(--white);
+        background: var(--primary);
+    }
+
+.hero-image {
+    position: relative;
+    min-width: 0;
+}
+
+    .hero-image img {
+        height: 365px;
+        border-radius: 22px;
+        object-fit: cover;
+        box-shadow: 0 24px 60px rgba(16, 37, 68, 0.17);
+        transition: transform 0.5s ease;
+    }
+
+    .hero-image:hover img {
+        transform: scale(1.015);
+    }
+
+/* ========================================
+   3. GENERAL SECTIONS
+======================================== */
+.section {
+    padding: 85px 8%;
+}
+
+    .section h2,
+    .contact h2 {
+        margin: 0 0 18px;
+        color: var(--navy);
+        font-size: clamp(27px, 3vw, 36px);
+        font-weight: 800;
+        line-height: 1.4;
+        letter-spacing: -0.5px;
+    }
+
+    .section p,
+    .contact-info p {
+        color: var(--muted);
+    }
+
+/* ========================================
+   4. ABOUT - เกี่ยวกับบริษัท
+======================================== */
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+    background: var(--white);
+}
+
+.section-image {
+    min-width: 0;
+}
+
+    .section-image img {
+        height: 360px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+    }
+
+.section-content {
+    max-width: 550px;
+}
+
+    .section-content p {
+        margin: 0 0 18px;
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 8px;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+    .text-link:hover {
+        color: var(--primary-dark);
+        transform: translateX(4px);
+    }
+
+/* ========================================
+   5. PRODUCTS - สินค้าและบริการ
+======================================== */
+.products {
+    position: relative;
+    background: var(--light-bg);
+}
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+    .section-heading .eyebrow {
+        margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+        margin-bottom: 12px;
+    }
+
+    .section-heading p {
+        margin: 0;
+    }
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 26px;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: 0 4px 18px rgba(16, 37, 68, 0.035);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+    .product-card:hover {
+        transform: translateY(-7px);
+        border-color: #bfd5ff;
+        box-shadow: 0 18px 40px rgba(16, 37, 68, 0.11);
+    }
+
+    .product-card > img {
+        height: 240px;
+        object-fit: cover;
+        background: #eaf1fa;
+        transition: transform 0.5s ease;
+    }
+
+    .product-card:hover > img {
+        transform: scale(1.035);
+    }
+
+.product-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px;
+}
+
+.product-label {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--primary);
+    background: #edf4ff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.product-info h3 {
+    margin: 13px 0 10px;
+    color: var(--navy);
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.product-info p {
+    margin: 0 0 15px;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.product-info .text-link {
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+/* ========================================
+   6. CONTACT - ช่องทางติดต่อ
+======================================== */
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+    background: radial-gradient( circle at 100% 0, #e7f0ff 0, transparent 38% ), #ffffff;
+}
+
+.contact-info {
+    max-width: 500px;
+}
+
+    .contact-info h2 {
+        margin-bottom: 15px;
+    }
+
+    .contact-info p {
+        margin: 10px 0;
+        font-size: 15px;
+    }
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+    .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 50px;
+        padding: 10px 17px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+        .social-links a:first-child {
+            color: #1877F2;
+        }
+
+        .social-links a:last-child {
+            color: #06C755;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(16, 37, 68, 0.09);
+        }
+
+        .social-links a svg {
+            display: block;
+            flex-shrink: 0;
+            fill: currentColor;
+            color: inherit;
+        }
+
+/* ========================================
+   7. FOOTER
+======================================== */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 8%;
+    color: #d8e5f7;
+    background: var(--navy);
+    font-size: 13px;
+}
+
+    .footer p {
+        margin: 0;
+    }
+
+    .footer a {
+        color: #ffffff;
+        font-weight: 600;
+    }
+
+        .footer a:hover {
+            color: #8bbaff;
+        }
+
+/* ========================================
+   8. RESPONSIVE - TABLETS
+======================================== */
+@media (max-width: 1000px) {
+    .hero {
+        gap: 30px;
+        padding: 60px 6%;
+    }
+
+    .section {
+        padding: 70px 6%;
+    }
+
+    .about {
+        gap: 35px;
+    }
+
+    .product-grid {
+        gap: 18px;
+    }
+
+    .product-info {
+        padding: 20px;
+    }
+
+    .product-card > img {
+        height: 210px;
+    }
+
+    .contact {
+        gap: 30px;
+    }
+}
+
+/* ========================================
+   9. RESPONSIVE - PHONES
+======================================== */
+@media (max-width: 700px) {
+    .hero,
+    .about,
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        gap: 35px;
+        min-height: auto;
+        padding: 55px 6%;
+    }
+
+        .hero h1 {
+            font-size: clamp(32px, 8vw, 44px);
+        }
+
+    .hero-image img {
+        height: 280px;
+        border-radius: 15px;
+    }
+
+    .section {
+        padding: 60px 6%;
+    }
+
+    .about {
+        gap: 30px;
+    }
+
+    .section-image img {
+        height: 280px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .product-card > img {
+        height: 180px;
+    }
+
+    .product-info {
+        padding: 17px;
+    }
+
+        .product-info h3 {
+            font-size: 20px;
+        }
+
+    .contact {
+        gap: 25px;
+    }
+
+    .social-links {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 40px;
+    }
+
+        .hero h1 {
+            font-size: 32px;
+            letter-spacing: -0.6px;
+        }
+
+        .hero p {
+            font-size: 14px;
+        }
+
+    .hero-image img {
+        height: 230px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card > img {
+        height: 230px;
+    }
+
+    .product-info {
+        padding: 22px;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section h2,
+    .contact h2 {
+        font-size: 27px;
+    }
+
+    .social-links {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+        .social-links a {
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+    .footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        padding: 22px 6%;
+    }
+}
+
+/* ========================================
+   10. ACCESSIBILITY - ลดการเคลื่อนไหว
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
